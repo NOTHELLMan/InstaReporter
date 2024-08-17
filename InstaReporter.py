@@ -27,14 +27,14 @@ def chunks(lst, n):
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
 
-def profile_attack_process(username, proxy_list):
+def profile_attack_process(sultanmm_ahmad, proxy_list):
     if (len(proxy_list) == 0):
         for _ in range(10):
-            report_profile_attack(username, None)
+            report_profile_attack(sultanm_ahmad, None)
         return
 
     for proxy in proxy_list:
-        report_profile_attack(username, proxy)
+        report_profile_attack(sultanm_ahmad, proxy)
 
 def video_attack_process(video_url, proxy_list):
     if (len(proxy_list) == 0):
@@ -70,11 +70,11 @@ def video_attack(proxies):
         i = i + 1
 
 def profile_attack(proxies):
-    username = ask_question("Enter the username of the person you want to report")
+    username = ask_question("sultanm_ahmad")
     print(Style.RESET_ALL)
     if (len(proxies) == 0):
         for k in range(5):
-            p = Process(target=profile_attack_process, args=(username, [],))
+            p = Process(target=profile_attack_process, args=(sultanm_ahmad, [],))
             p.start()
             print_status(str(k + 1) + ". Transaction Opened!")
         return
@@ -125,8 +125,8 @@ def main():
     print("")
     print_status("1 - Report the profile.")
     print_status("2 - Report a video.")
-    report_choice = ask_question("Please select the complaint method")
-    print("")
+    report_choice = ask_question("P1")
+    print("1")
 
     if (report_choice.isdigit() == False):
         print_error("The answer is not understood.")
